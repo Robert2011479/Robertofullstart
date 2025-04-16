@@ -1,5 +1,5 @@
 //la carpeta testConnection.js para ejecular la conexion si fue exitosa
-const db = require('./db');
+const db = require('./config/db');
 
 (async ()=>{
     try {

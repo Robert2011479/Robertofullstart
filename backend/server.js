@@ -1,7 +1,9 @@
-// server.js
 const express = require('express');
 const cors = require('cors');
+
+// Importamos las rutas
 const productRoutes = require('./routers/productRouters');
+const clienteRoutes = require('./routers/clienteRouters');
 
 class Server {
   constructor() {
@@ -18,6 +20,9 @@ class Server {
   routes() {
     // Todas las rutas de productos se alojarán en /productos
     this.app.use('/productos', productRoutes);
+
+    //Todas las rutas de clientes se alojarán en /clientes
+    this.app.use('/clientes', clienteRoutes);
   }
 
   start() {
@@ -27,6 +32,5 @@ class Server {
     });
   }
 }
-
 const server = new Server();
 server.start();
